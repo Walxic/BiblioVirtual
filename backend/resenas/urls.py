@@ -4,8 +4,8 @@ from resenas import views
 from rest_framework.documentation import include_docs_urls
 
 router = routers.DefaultRouter()
-router.register(r'Reseñas', views.ResenaView, 'Resena')
+router.register(r'resena', views.ResenaView, 'Resena')
 
 urlpatterns = [
-    path("api/v1", include(router.urls)),
+    path("api/", include(router.urls)),
 ]

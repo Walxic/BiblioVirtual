@@ -4,4 +4,4 @@ from .models import Resena
 class ResenaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resena
-        fields = ('id', 'Titulo', 'Autor', 'Reseña')
+        fields = '__all__'
