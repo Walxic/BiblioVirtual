@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from rest_framework import viewsets
+from .serializer import ResenaSerializer
+from .models import Resena
 
-# Create your views here.
+class ResenaView(viewsets.ModelViewSet):
+    serializer_class = ResenaSerializer
+    queryset = Resena.objects.all()
+
+

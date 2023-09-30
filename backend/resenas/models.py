@@ -9,4 +9,4 @@ class Resena (models.Model):
    completa = models.BooleanField(default=False)
 
 def __str__(self):
-    return self.completa
+    return self.titulo
