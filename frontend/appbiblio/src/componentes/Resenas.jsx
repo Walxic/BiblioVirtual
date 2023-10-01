@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
+//import React, { useState, useEffect } from 'react';
+
+<div>Lista</div>;
+
+
+/*
+
 
 function Resenas() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/resenas/api/resena/')
+    fetch("http://localhost:8000/resenas/api/resena/")
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);

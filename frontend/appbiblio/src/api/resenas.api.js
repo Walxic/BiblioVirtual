@@ -1,6 +1,6 @@
 import axios from 'axios'
-//import Reseñas from './componentes/Reseñas';
+/*import Resenas from './componentes/Reseñas';*/
 
-export const getAllReseñas = () => {
-    return axios.get('http://127.0.0.1:8000/resenas/api/resena/')
+export const getAllResenas = () => {
+    return axios.get("http://localhost:8000/resenas/api/resena/")
 }
