@@ -1,8 +1,89 @@
-//import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // Importa Axios
+import '../hojas-de-estilo/acerca.css';
 
-<div>Lista</div>;
+function ResenasTable() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Realiza la solicitud GET con Axios
+    axios.get('http://localhost:8000/resenas/api/resena/')
+      .then((response) => setData(response.data))
+      .catch((error) => console.error('Error:', error));
+  }, []);
+
+  return (
+    <div className="acercade">
+      <h1>Tabla de Reseñas</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Reseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr key={item.id}>
+              <td>{item.titulo}</td>
+              <td>{item.autor}</td>
+              <td>{item.reseña}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default ResenasTable;
 
 
+
+/*import React, { useState, useEffect } from 'react';
+import './acerca.css'; // Importa tu hoja de estilo CSS
+
+function ResenasTable() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/resenas/api/resena/')
+      .then((response) => response.json())
+      .then((data) => setData(data));
+  }, []);
+
+  return (
+    <div className="acercade"> {/* Agrega la clase CSS 'acercade' al contenedor 
+      <h1>Tabla de Reseñas</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Reseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr key={item.id}>
+              <td>{item.titulo}</td>
+              <td>{item.autor}</td>
+              <td>{item.reseña}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default ResenasTable;
+
+
+
+
+*/
 /*
 
 
